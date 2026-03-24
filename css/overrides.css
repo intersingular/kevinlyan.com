@@ -1,0 +1,16 @@
+/* Fallbacks when Webflow interactions (IX) are not fully active */
+
+.link-block.w-inline-block,
+.link-block-2.w-inline-block {
+  position: relative;
+}
+
+.link-block:hover .div-block-11,
+.link-block-2:hover .div-block-11 {
+  opacity: 1 !important;
+  transition: opacity 0.2s ease;
+}
+
+.moon-gold-heading {
+  color: #e3b55a;
+}
