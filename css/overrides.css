@@ -162,3 +162,387 @@
     padding: 24px;
   }
 }
+
+/* Figma landing page replacement */
+.pc-landing {
+  margin: 0;
+  background: #1f2531;
+}
+
+.pc-page {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.pc-hero {
+  background: #1f2531;
+  position: relative;
+  width: 100%;
+  min-height: 800px;
+}
+
+.pc-nav {
+  position: absolute;
+  top: 29px;
+  left: 184px;
+  display: flex;
+  gap: 36px;
+  z-index: 5;
+}
+
+.pc-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: Lato, sans-serif;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.pc-hero-content {
+  padding-left: 184px;
+  padding-top: 314px;
+  padding-right: 360px;
+}
+
+.pc-hero-content h1 {
+  margin: 0 0 44px;
+  color: #f9de8e;
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 1.08;
+}
+
+.pc-hero-content p {
+  margin: 0;
+  color: #ffffff;
+  font-family: Lato, sans-serif;
+  font-size: 18px;
+  line-height: 2.2;
+}
+
+.pc-hero-content p span {
+  color: #f9de8e;
+}
+
+.pc-row {
+  text-decoration: none;
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  min-height: 800px;
+  display: block;
+}
+
+.pc-row-blue {
+  background: #002761;
+}
+
+.pc-row-purple {
+  background: #2a2772;
+}
+
+.pc-row-teal {
+  background: #001d2f;
+}
+
+.pc-row-left {
+  padding-left: 184px;
+  padding-top: 82px;
+  padding-right: 360px;
+  position: relative;
+  min-height: 800px;
+}
+
+.pc-row-left h2 {
+  margin: 0;
+  color: #ebeaff;
+  font-family: Lato, sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1;
+}
+
+.pc-row-left p {
+  margin: 24px 0 0;
+  color: #ebeaff;
+  font-family: Lato, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.pc-workflow-art {
+  position: absolute;
+  left: 150px;
+  bottom: 70px;
+  width: 700px;
+  height: 410px;
+}
+
+.pc-workflow-back {
+  position: absolute;
+  left: 0;
+  bottom: 38px;
+  width: 470px;
+  height: 286px;
+  border-radius: 22px;
+  background: rgba(187, 211, 235, 0.7);
+}
+
+.pc-workflow-front {
+  position: absolute;
+  left: 270px;
+  bottom: 66px;
+  width: 280px;
+  height: 360px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 2px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 20px 70px rgba(0, 101, 255, 0.2);
+}
+
+.pc-workflow-front::before,
+.pc-workflow-front::after {
+  content: "";
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  height: 12px;
+  border-radius: 6px;
+  background: #f0f1f2;
+}
+
+.pc-workflow-front::before {
+  top: 36px;
+}
+
+.pc-workflow-front::after {
+  top: 64px;
+  right: 80px;
+}
+
+.pc-avatar {
+  position: absolute;
+  left: -98px;
+  bottom: 0;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  box-shadow: 0 4px 52px rgba(0, 0, 0, 0.45);
+}
+
+.pc-disruptions-art {
+  position: absolute;
+  left: 185px;
+  bottom: 74px;
+  width: 617px;
+  height: 493px;
+}
+
+.pc-disruptions-layer {
+  position: absolute;
+  border-radius: 18px;
+}
+
+.pc-disruptions-layer-1 {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 392px;
+  background: #bcc9d9;
+}
+
+.pc-disruptions-layer-2 {
+  left: 14px;
+  right: 14px;
+  bottom: 16px;
+  height: 392px;
+  background: #c9d4e1;
+}
+
+.pc-disruptions-layer-3 {
+  left: 28px;
+  right: 28px;
+  bottom: 32px;
+  height: 392px;
+  background: #d5deea;
+}
+
+.pc-disruptions-card {
+  position: absolute;
+  left: 36px;
+  right: 36px;
+  top: 0;
+  height: 392px;
+  border-radius: 18px;
+  background: #f5f7fb;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+}
+
+.pc-disruptions-card-top {
+  height: 48px;
+  background: linear-gradient(90deg, #3f88bc 0%, #0a4a78 26%, #0a4a78 100%);
+}
+
+.pc-disruptions-card-body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 48px;
+  bottom: 0;
+  background:
+    linear-gradient(#d6dce4, #d6dce4) 36px 28px / 180px 22px no-repeat,
+    linear-gradient(#d6dce4, #d6dce4) 36px 62px / 250px 10px no-repeat,
+    linear-gradient(#e0e6ed, #e0e6ed) 36px 108px / 230px 128px no-repeat,
+    linear-gradient(#e0e6ed, #e0e6ed) 286px 108px / 230px 128px no-repeat;
+}
+
+.pc-scroll-rail {
+  position: fixed;
+  left: 50%;
+  margin-left: 296px;
+  top: 0;
+  width: 200px;
+  height: 100vh;
+  z-index: 30;
+  pointer-events: none;
+}
+
+.pc-scroll-paint {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 0;
+  background: #2e7bef;
+  will-change: height, background-color;
+}
+
+.pc-scroll-logo {
+  position: absolute;
+  left: 28px;
+  top: 29vh;
+  width: 141px;
+  height: auto;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 200ms ease;
+  will-change: opacity;
+}
+
+.pc-scroll-handle {
+  position: absolute;
+  left: 0;
+  top: 61vh;
+  width: 200px;
+  will-change: transform;
+}
+
+.pc-scroll-hero-skyline {
+  position: absolute;
+  left: 0;
+  top: 133px;
+  width: 200px;
+  opacity: 0;
+}
+
+.pc-scroll-hero-top {
+  position: absolute;
+  left: 0;
+  top: 294px;
+  width: 200px;
+  opacity: 0;
+}
+
+.pc-scroll-hero-icon {
+  position: absolute;
+  left: 50px;
+  top: 368px;
+  width: 101px;
+  opacity: 0;
+}
+
+.pc-scroll-rail.is-hero .pc-scroll-hero-skyline,
+.pc-scroll-rail.is-hero .pc-scroll-hero-top,
+.pc-scroll-rail.is-hero .pc-scroll-hero-icon {
+  opacity: 1;
+}
+
+.pc-scroll-rail.is-hero .pc-scroll-handle {
+  top: 469px;
+}
+
+.pc-scroll-rail.is-hero .pc-scroll-logo,
+.pc-scroll-rail.is-hero .pc-scroll-paint {
+  opacity: 0;
+}
+
+@media screen and (max-width: 991px) {
+  .pc-nav,
+  .pc-hero-content,
+  .pc-row-left {
+    left: auto;
+    padding-left: 24px;
+  }
+
+  .pc-nav {
+    top: 18px;
+  }
+
+  .pc-hero-content {
+    padding-top: 120px;
+    padding-right: 24px;
+  }
+
+  .pc-row-left h2 {
+    font-size: 38px;
+  }
+
+  .pc-row-left {
+    padding-right: 24px;
+  }
+
+  .pc-workflow-art {
+    position: relative;
+    left: 0;
+    bottom: auto;
+    width: 100%;
+    max-width: 620px;
+    height: 360px;
+    margin-top: 40px;
+  }
+
+  .pc-workflow-back {
+    width: 72%;
+  }
+
+  .pc-workflow-front {
+    left: 46%;
+    width: 46%;
+    min-width: 240px;
+  }
+
+  .pc-avatar {
+    left: 0;
+    width: 160px;
+    height: 160px;
+  }
+
+  .pc-disruptions-art {
+    position: relative;
+    left: 0;
+    bottom: auto;
+    width: 100%;
+    max-width: 620px;
+    margin-top: 36px;
+  }
+
+  .pc-scroll-rail {
+    display: none;
+  }
+}
