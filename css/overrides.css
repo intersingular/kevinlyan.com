@@ -464,6 +464,8 @@
   left: 50px;
   top: 368px;
   width: 101px;
+  height: 98px;
+  object-fit: contain;
   opacity: 0;
 }
 

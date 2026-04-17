@@ -1,0 +1,312 @@
+/* Custom top nav for non-home pages */
+#navbar {
+  display: none !important;
+}
+
+.site-top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 36px;
+  min-height: 74px;
+  padding: 0 20px 0 120px;
+  background: #1f2531;
+}
+
+.site-top-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-family: Lato, sans-serif;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.site-top-nav a.is-active {
+  color: #48c8c8;
+  font-weight: 700;
+}
+
+/* Case study content alignment to nav "work" left edge */
+body:not(.about-page) .section .cs-container.w-container,
+body:not(.about-page) .case-header .cs-container.w-container {
+  max-width: none;
+  width: auto;
+  margin-left: 120px;
+  margin-right: 120px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Force Problem Overview content into a single stacked column */
+body:not(.about-page) .div-block-5 {
+  display: block !important;
+}
+
+body:not(.about-page) section#research .div-block-5 > .w-layout-grid.grid-2 {
+  display: inline-grid !important;
+  grid-template-columns: max-content max-content !important;
+  justify-content: flex-start !important;
+  align-items: start !important;
+  column-gap: 32px !important;
+  row-gap: 0 !important;
+  width: max-content !important;
+  max-width: 100%;
+  margin-bottom: 16px;
+}
+
+body:not(.about-page) .div-block-5 > .w-layout-grid.grid-2 .details,
+body:not(.about-page) .div-block-5 > .w-layout-grid.grid-2 p {
+  text-align: left;
+}
+
+body:not(.about-page) .div-block-5 > .w-layout-grid.grid-2 p:empty {
+  display: none !important;
+}
+
+body:not(.about-page) .div-block-5 > p.bodycopy,
+body:not(.about-page) .div-block-5 > p.overview,
+body:not(.about-page) .div-block-5 > p.longpad,
+body:not(.about-page) .div-block-5 > p.overview.longpad {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* Footer ordering: next project above social icons */
+.footer-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0;
+}
+
+.footer-menu .footer-brand {
+  order: 2;
+  margin-left: auto;
+  text-align: right;
+}
+
+.footer-menu .footer-column {
+  order: 1;
+  margin-left: 0;
+}
+
+@media screen and (min-width: 992px) {
+  .body.footer .container.w-container {
+    max-width: none;
+    width: auto;
+    margin-left: 120px;
+    margin-right: 120px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* About page content alignment */
+#hero-layout .cs-container.w-container {
+  max-width: none;
+  width: 100%;
+  padding-left: 96px;
+  padding-right: 40px;
+}
+
+#hero-layout .columns.w-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#hero-layout .column-2.w-col {
+  width: 58%;
+  padding-left: 0 !important;
+}
+
+#hero-layout .column-3.w-col {
+  width: 42%;
+  padding-right: 0;
+}
+
+#hero-layout .image-5 {
+  width: min(380px, 100%);
+  height: auto;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 991px) {
+  .site-top-nav {
+    justify-content: center;
+    min-height: 64px;
+    padding: 0 14px;
+    gap: 24px;
+  }
+
+  .site-top-nav a {
+    font-size: 16px;
+  }
+
+  body:not(.about-page) .section .cs-container.w-container,
+  body:not(.about-page) .case-header .cs-container.w-container {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+
+  #hero-layout .cs-container.w-container {
+    width: 75%;
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  #hero-layout .columns.w-row {
+    display: block;
+  }
+
+  #hero-layout .column-2.w-col,
+  #hero-layout .column-3.w-col {
+    width: 100%;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #hero-layout .column-3.w-clearfix.w-col {
+    display: flex;
+    justify-content: center;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  #hero-layout .image-5 {
+    display: block;
+    margin: 18px auto 0 !important;
+    width: min(320px, 100%);
+    max-width: 320px;
+  }
+
+  #hero-layout .paragraph,
+  #hero-layout .heading.case-study.nonspacer {
+    text-align: center;
+  }
+
+  .footer-menu {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    padding-top: 0;
+    min-height: auto;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .footer-menu .footer-brand {
+    order: 1;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    display: block;
+    align-self: center;
+    text-align: center;
+  }
+
+  .footer-menu .footer-column {
+    order: 2;
+  }
+
+  .footer-menu .footer-brand .text-block {
+    text-align: center;
+  }
+
+  .body.footer {
+    min-height: 170px;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .body.footer .container.w-container {
+    width: 100%;
+    min-height: 170px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body:not(.about-page) .section .cs-container.w-container,
+  body:not(.about-page) .case-header .cs-container.w-container {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .body.footer {
+    min-height: 170px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .body.footer .container.w-container {
+    min-height: 170px !important;
+    width: 100% !important;
+    max-width: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+  }
+
+  .body.footer .footer-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    height: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    gap: 22px !important;
+    text-align: center !important;
+  }
+
+  .body.footer .footer-menu .footer-brand {
+    width: auto !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  .body.footer .footer-menu .footer-column {
+    width: auto !important;
+    margin: 0 auto !important;
+  }
+
+  .body.footer .footer-menu .w-list-unstyled {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .body.footer .footer-menu .list-item-2 {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 14px !important;
+  }
+
+  .body.footer .footer-menu .footer.shift {
+    margin-left: 0 !important;
+    transform: none !important;
+  }
+}

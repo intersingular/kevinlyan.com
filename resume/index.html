@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resume | Kevin Yan</title>
+  <link href="../css/portfolio-inline.css" rel="stylesheet" type="text/css" />
+  <style>
+    body {
+      margin: 0;
+      background: #0f0f0f;
+      color: #f6f6f6;
+      font-family: "DM Sans", "Montserrat", sans-serif;
+    }
+    .resume-page {
+      min-height: 100vh;
+      padding: 20px 20px 30px;
+      box-sizing: border-box;
+    }
+    .resume-shell {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      gap: 18px;
+    }
+    .resume-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .resume-title {
+      margin: 0;
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .resume-download {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid #48c8c8;
+      color: #48c8c8;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    .resume-download:hover {
+      background: #48c8c8;
+      color: #111;
+    }
+    .resume-frame-wrap {
+      width: 100%;
+      background: #161616;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 16px;
+      padding: 8px;
+      box-sizing: border-box;
+      min-height: 72vh;
+    }
+    .resume-frame {
+      width: 100%;
+      height: 72vh;
+      border: 0;
+      border-radius: 10px;
+      background: #222;
+      display: block;
+    }
+    @media (max-width: 900px) {
+      .resume-frame-wrap,
+      .resume-frame {
+        min-height: 70vh;
+        height: 70vh;
+      }
+      .resume-page {
+        padding: 16px 14px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="resume-page">
+    <div class="resume-shell">
+      <nav class="pc-nav">
+        <a href="../index.html">work</a>
+        <a href="https://www.dropbox.com/scl/fi/ovjkc99h7snie7pqvntlb/Kevin-Yan-PD-Resume.pdf?rlkey=fum5glvgtvtllv3e18c8pfm8g&st=m7jsagu5&dl=0" target="_blank" rel="noopener noreferrer">resume</a>
+        <a href="../about.html">about</a>
+      <a href="https://www.linkedin.com/in/kevinlyan/" target="_blank" rel="noopener noreferrer">linkedin</a></nav>
+
+      <section class="resume-header">
+        <h1 class="resume-title">Kevin Yan - Product Design Resume</h1>
+        <a class="resume-download" href="../assets/resume/Kevin-Yan-PD-Resume.pdf" download>Download PDF</a>
+      </section>
+
+      <section class="resume-frame-wrap">
+        <iframe
+          class="resume-frame"
+          src="../assets/resume/Kevin-Yan-PD-Resume.pdf#view=FitH"
+          title="Kevin Yan Resume"
+        ></iframe>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
