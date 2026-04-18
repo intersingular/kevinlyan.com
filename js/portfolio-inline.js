@@ -28,14 +28,14 @@
     }
   });
 
-  const SKY_TOP=133, SKY_H=158, SKY_BOTTOM=SKY_TOP+SKY_H;
+  const SKY_H=158;
+  const HANDLE_H=219; // viewBox height of handle SVG
   const GAP=8;
-  const PAINT_TOP=SKY_BOTTOM+GAP;
   const PERSON_H=108;
   const INITIAL_PAINT_H=179;
   const GROWTH_RATE=0.35;
   const LOGO_PAGE_OFFSET=140;
-  const PERSON_PAGE_TOP=PAINT_TOP+INITIAL_PAINT_H-PERSON_H; // 370 — fixed on page like skyline
+  const STACK_H=SKY_H+GAP+INITIAL_PAINT_H+GAP+HANDLE_H;
 
   const states=[
     {id:'pc-hero',type:'hero',color:'#f9de8e',logo:null},
@@ -56,6 +56,14 @@
   function secAtY(y){
     for(let i=secs.length-1;i>=0;i--){if(y>=secs[i].el.getBoundingClientRect().top)return secs[i];}
     return secs[0];
+  }
+
+  function getDesktopGeometry(vh){
+    const skyTop=clamp(Math.round((vh-STACK_H)*0.5),96,220);
+    const skyBottom=skyTop+SKY_H;
+    const paintTop=skyBottom+GAP;
+    const personPageTop=paintTop+INITIAL_PAINT_H-PERSON_H;
+    return {skyTop,paintTop,personPageTop};
   }
 
   const miniPaint=document.getElementById('pc-mini-paint');
@@ -158,26 +166,26 @@
     const vh=window.innerHeight;
     const sy=window.scrollY||0;
     const active=getActive();
+    const desktopGeo=getDesktopGeometry(vh);
     const maxPaintBottom=vh*0.85;
-    const initialPaintBottom=PAINT_TOP+INITIAL_PAINT_H;
+    const initialPaintBottom=desktopGeo.paintTop+INITIAL_PAINT_H;
     const paintBottom=clamp(initialPaintBottom+sy*GROWTH_RATE, initialPaintBottom, Math.max(initialPaintBottom,maxPaintBottom));
-    const skylineScreenBottom=(SKY_TOP-sy)+SKY_H;
+    const skylineScreenBottom=(desktopGeo.skyTop-sy)+SKY_H;
     const paintTop=Math.max(0, skylineScreenBottom+GAP);
     const paintH=Math.max(0, paintBottom-paintTop);
     const handleTop=paintBottom+GAP;
-    const HANDLE_H=219; // viewBox height of handle SVG
     const handleTopClamped=Math.min(handleTop, vh-HANDLE_H-8);
     const paintBottomClamped=Math.min(paintBottom, handleTopClamped-GAP);
     const paintHClamped=Math.max(0, paintBottomClamped-paintTop);
     paint.style.top=paintTop+'px';
     paint.style.height=paintHClamped+'px';
     handle.style.top=handleTopClamped+'px';
-    skyline.style.top=(SKY_TOP-sy)+'px';
-    skyline.style.opacity=(SKY_TOP-sy+SKY_H>0)?'1':'0';
-    person.style.top=(PERSON_PAGE_TOP-sy)+'px';
-    person.style.opacity=(PERSON_PAGE_TOP+PERSON_H-sy>0)?'1':'0';
+    skyline.style.top=(desktopGeo.skyTop-sy)+'px';
+    skyline.style.opacity=(desktopGeo.skyTop-sy+SKY_H>0)?'1':'0';
+    person.style.top=(desktopGeo.personPageTop-sy)+'px';
+    person.style.opacity=(desktopGeo.personPageTop+PERSON_H-sy>0)?'1':'0';
     if(personGap){
-      personGap.style.top=(PERSON_PAGE_TOP+PERSON_H-sy)+'px';
+      personGap.style.top=(desktopGeo.personPageTop+PERSON_H-sy)+'px';
       personGap.style.opacity=person.style.opacity;
     }
     const hSec=secAtY(handleTopClamped);
