@@ -49,7 +49,7 @@ img{display:block;border:0}
 .pc-copy-desktop{display:inline}
 
 /* ═══ CASE STUDY ROWS ═══ */
-.pc-row{text-decoration:none;position:relative;overflow:visible;width:100%;display:block;background:#1f2531;padding:80px 0}
+.pc-row{text-decoration:none;position:relative;overflow:visible;width:100%;display:block;background:#1f2531;padding:56px 0}
 .pc-row:first-of-type{margin-top:0}
 .pc-row:last-of-type{padding-bottom:240px}
 
@@ -113,6 +113,51 @@ img{display:block;border:0}
   }
 }
 
+/* ═══ LARGE DESKTOP (≥1280px) ═══ */
+@media screen and (min-width:1280px){
+  .pc-page{max-width:none}
+
+  /* Keep nav aligned to the same 70% centered content band */
+  .pc-nav{left:15vw}
+
+  /* Reserve room for brush + gap on the right side */
+  .pc-hero-content{
+    padding-left:15vw;
+    padding-right:calc(15vw + 200px + min(10vw, 120px));
+  }
+
+  .pc-row{padding:clamp(52px,3.6vw,78px) 0}
+
+  /* Tiles occupy the remaining width inside the same centered band */
+  .pc-card{
+    margin-left:15vw;
+    margin-right:calc(15vw + 200px + min(10vw, 120px));
+  }
+
+  /* Scale visuals up for larger desktop canvases */
+  .pc-card-img{
+    padding:16px 20px;
+    aspect-ratio:1010/600;
+  }
+  .pc-card-img img{
+    width:96%;
+    height:96%;
+  }
+  .pc-card-text{
+    min-height:112px;
+    padding:18px 24px;
+  }
+  .pc-card-text h2{font-size:24px}
+  .pc-card-text p{font-size:15px}
+
+  /* Brush stays inside the same centered 70% area */
+  .pc-scroll-rail{
+    left:auto;
+    right:15vw;
+    margin-left:0;
+  }
+}
+
 /* ── Card gradients ── */
 .pc-card-lace{background:linear-gradient(175deg,#0c0e1a 0%,#1a1040 30%,#3a1a6b 70%,#5c2d91 100%)}
 .pc-card-lait{background:linear-gradient(175deg,#0e0b2a 0%,#1e1660 35%,#2a2772 65%,#3d35a0 100%)}
@@ -157,7 +202,7 @@ img{display:block;border:0}
   .pc-hero-content p{font-size:17px;line-height:1.55}
   .pc-copy-desktop{display:none}
   .pc-copy-mobile{display:inline}
-  .pc-row{min-height:auto;overflow:hidden;padding:34px 0}
+  .pc-row{min-height:auto;overflow:hidden;padding:24px 0}
   .pc-row:last-of-type{padding-bottom:120px}
   .pc-card{width:80%;margin-left:auto;margin-right:auto;padding:3px}
   .pc-card-img{
@@ -217,7 +262,7 @@ img{display:block;border:0}
     object-fit:contain;
     object-position:center center;
   }
-  .pc-row{padding:34px 0}
+  .pc-row{padding:24px 0}
   .pc-row:last-of-type{padding-bottom:120px}
   .pc-card-img{border-radius:10px}
   .pc-card-text{margin-top:2px;padding:14px 14px 10px 14px;border-radius:0 0 10px 10px}
