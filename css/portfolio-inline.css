@@ -158,18 +158,6 @@ img{display:block;border:0}
   .pc-card-text h2{font-size:24px}
   .pc-card-text p{font-size:15px}
 
-  /* Brush stays inside the same centered 70% area */
-  .pc-scroll-rail{
-    left:auto;
-    right:var(--pc-home-side-pad);
-    margin-left:0;
-    width:var(--pc-brush-width);
-  }
-  .pc-scroll-paint,
-  .pc-scroll-skyline,
-  .pc-scroll-person,
-  .pc-scroll-person-gap,
-  .pc-scroll-handle{width:var(--pc-brush-width)}
 }
 
 /* ── Card gradients ── */
@@ -188,6 +176,23 @@ img{display:block;border:0}
 .pc-scroll-handle{position:absolute;left:0;width:200px;z-index:4}
 .pc-scroll-logo{position:absolute;left:50%;transform:translateX(-50%);top:28vh;opacity:0;transition:opacity 200ms ease;z-index:7;display:block}
 .pc-scroll-logo img{mix-blend-mode:screen;display:block}
+
+/* Apply after base rail rules so desktop centering wins in cascade */
+@media screen and (min-width:1280px){
+  .pc-scroll-rail{
+    left:auto;
+    right:var(--pc-home-side-pad, 15vw);
+    margin-left:0;
+    width:var(--pc-brush-width, 200px);
+  }
+  .pc-scroll-paint,
+  .pc-scroll-skyline,
+  .pc-scroll-person,
+  .pc-scroll-person-gap,
+  .pc-scroll-handle{
+    width:var(--pc-brush-width, 200px);
+  }
+}
 
 /* ═══ MOBILE MINI-RAIL ═══ */
 .pc-mini-rail{display:none}
