@@ -135,9 +135,11 @@ body:not(.about-page) .div-block-5 > p.overview.longpad {
 /* About page content alignment */
 #hero-layout .cs-container.w-container {
   max-width: none;
-  width: 100%;
-  padding-left: 96px;
-  padding-right: 40px;
+  width: auto;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 #hero-layout .columns.w-row {
@@ -185,9 +187,9 @@ body:not(.about-page) .div-block-5 > p.overview.longpad {
 
 @media screen and (max-width: 991px) {
   .site-top-nav {
-    justify-content: center;
+    justify-content: flex-start;
     min-height: 64px;
-    padding: 0 14px;
+    padding: 0 12.5vw;
     gap: 24px;
   }
 
