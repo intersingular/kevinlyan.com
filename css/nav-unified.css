@@ -142,7 +142,7 @@ body:not(.about-page) .div-block-5 > p.overview.longpad {
 
 #hero-layout .columns.w-row {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 28px;
   margin-left: 0;
   margin-right: 0;
@@ -151,17 +151,36 @@ body:not(.about-page) .div-block-5 > p.overview.longpad {
 #hero-layout .column-2.w-col {
   width: 58%;
   padding-left: 0 !important;
+  display: flex;
+  flex-direction: column;
 }
 
 #hero-layout .column-3.w-col {
   width: 42%;
   padding-right: 0;
+  display: flex;
+  align-items: center;
+  padding-top: 72px;
+}
+
+#hero-layout .column-2 .heading.case-study.nonspacer {
+  margin: 0 0 22px;
+}
+
+#hero-layout .column-2 .paragraph {
+  margin: 0;
+}
+
+/* Hide legacy leading break so "Hey!" stays on its own line */
+#hero-layout .column-2 .paragraph > br:first-child {
+  display: none;
 }
 
 #hero-layout .image-5 {
   width: min(380px, 100%);
   height: auto;
   margin-left: auto;
+  margin-top: 0;
 }
 
 @media screen and (max-width: 991px) {
@@ -207,6 +226,8 @@ body:not(.about-page) .div-block-5 > p.overview.longpad {
   #hero-layout .column-3.w-clearfix.w-col {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+    padding-top: 0 !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
