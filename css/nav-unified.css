@@ -130,6 +130,12 @@ body:not(.about-page) .div-block-5 > p.overview.longpad {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+
+  /* Restore consistent navy-section rhythm on large desktops */
+  body:not(.about-page) .section.focus {
+    padding-top: 0 !important;
+    padding-bottom: 96px !important;
+  }
 }
 
 /* About page content alignment */
