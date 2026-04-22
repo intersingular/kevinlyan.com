@@ -79,7 +79,27 @@ img{display:block;border:0}
 .pc-copy-desktop{display:inline}
 
 /* ═══ CASE STUDY ROWS ═══ */
-.pc-row{text-decoration:none;position:relative;overflow:visible;width:100%;display:block;background:var(--pc-rows-bg, #1f2531);padding:56px 0}
+.pc-row{
+  text-decoration:none;
+  position:relative;
+  overflow:visible;
+  width:100%;
+  display:block;
+  background:transparent;
+  padding:56px 0;
+  z-index:0;
+}
+.pc-row::before{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:50%;
+  width:100vw;
+  transform:translateX(-50%);
+  background:var(--pc-rows-bg, #1f2531);
+  z-index:-1;
+}
 .pc-row:first-of-type{margin-top:0}
 .pc-row:last-of-type{padding-bottom:240px}
 
