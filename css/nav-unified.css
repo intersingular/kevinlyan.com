@@ -83,6 +83,17 @@ body:not(.about-page) .div-block-5 > p.overview.longpad {
   max-width: none !important;
 }
 
+/* Loom case-study intro note sections: reduce excess bottom space */
+body:not(.about-page) .section.focus.note-tight {
+  padding-bottom: 72px !important;
+}
+
+/* Alaska + Samsung case-study Overview sections: use navy backdrop */
+body:not(.about-page) .section.overview-dark {
+  background-image: linear-gradient(#1c2432, #1c2432) !important;
+  background-color: #1c2432 !important;
+}
+
 /* Case-study intro: header block fades in on load as one unit */
 body:not(.about-page) .case-header .cs-container.w-container {
   opacity: 0;
