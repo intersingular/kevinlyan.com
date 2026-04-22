@@ -1,4 +1,6 @@
 (function(){
+  requestAnimationFrame(()=>document.body.classList.add('pc-intro-ready'));
+
   const paint=document.getElementById('pc-scroll-paint');
   const skyline=document.getElementById('pc-scroll-skyline');
   const person=document.getElementById('pc-scroll-person');
@@ -28,7 +30,7 @@
     }
   });
 
-  const DESKTOP_RAIL_SCALE=0.85;
+  const BASE_RAIL_WIDTH=200;
   const SKY_H_BASE=158;
   const HANDLE_H_BASE=219; // viewBox height of handle SVG
   const GAP_BASE=8;
@@ -36,6 +38,10 @@
   const INITIAL_PAINT_H_BASE=179;
   const GROWTH_RATE=0.35;
   const LOGO_PAGE_OFFSET=140;
+  const LOGO_CLEARANCE=140;
+  const LOGO_MIN_SCREEN_Y=-180;
+  const TILE_REVEAL_OFFSET=140;
+  const TILE_REVEAL_RANGE=220;
 
   const states=[
     {id:'pc-hero',type:'hero',color:'#f9de8e',logo:null},
@@ -46,6 +52,10 @@
     {id:'pc-row-5',type:'row',color:'#1a4080',logo:'samsung'},
   ];
   const secs=states.map(s=>({...s,el:document.getElementById(s.id)})).filter(s=>s.el);
+  const rowVisuals=secs
+    .filter(s=>s.type==='row')
+    .map(s=>({section:s,card:s.el.querySelector('.pc-card')}))
+    .filter(v=>v.card);
   let raf=false;
 
   function clamp(n,a,b){return Math.max(a,Math.min(b,n))}
@@ -159,6 +169,10 @@
     const g=buildGradient(miniPaintTop, miniPaintH, active);
     miniPaint.style.backgroundColor=g.bg;
     miniPaint.style.backgroundImage=g.img;
+    for(const v of rowVisuals){
+      v.card.style.opacity='1';
+      v.card.style.transform='translateX(0)';
+    }
   }
 
   function update(){
@@ -167,12 +181,14 @@
     const vh=window.innerHeight;
     const sy=window.scrollY||0;
     const active=getActive();
+    const railWidth=rail.getBoundingClientRect().width || BASE_RAIL_WIDTH;
+    const desktopScale=railWidth/BASE_RAIL_WIDTH;
     const metrics={
-      skyH:SKY_H_BASE*DESKTOP_RAIL_SCALE,
-      handleH:HANDLE_H_BASE*DESKTOP_RAIL_SCALE,
-      gap:GAP_BASE*DESKTOP_RAIL_SCALE,
-      personH:PERSON_H_BASE*DESKTOP_RAIL_SCALE,
-      initialPaintH:INITIAL_PAINT_H_BASE*DESKTOP_RAIL_SCALE
+      skyH:SKY_H_BASE*desktopScale,
+      handleH:HANDLE_H_BASE*desktopScale,
+      gap:GAP_BASE*desktopScale,
+      personH:PERSON_H_BASE*desktopScale,
+      initialPaintH:INITIAL_PAINT_H_BASE*desktopScale
     };
     const desktopGeo=getDesktopGeometry(vh,metrics);
     const maxPaintBottom=vh*0.85;
@@ -205,8 +221,17 @@
       const logoPageY=s.el.offsetTop+LOGO_PAGE_OFFSET;
       const logoScreenY=logoPageY-sy;
       el.style.top=logoScreenY+'px';
-      const clearance=220;
-      el.style.opacity=(paintBottom>logoScreenY+clearance && logoScreenY>-100)?'1':'0';
+      el.style.opacity=(paintBottom>logoScreenY+LOGO_CLEARANCE && logoScreenY>LOGO_MIN_SCREEN_Y)?'1':'0';
+    }
+    for(const v of rowVisuals){
+      const logoPageY=v.section.el.offsetTop+LOGO_PAGE_OFFSET;
+      const logoScreenY=logoPageY-sy;
+      let reveal=clamp((paintBottom-(logoScreenY+TILE_REVEAL_OFFSET))/TILE_REVEAL_RANGE,0,1);
+      if(sy<=1){
+        reveal=0;
+      }
+      v.card.style.opacity=String(reveal);
+      v.card.style.transform='translateX(' + ((1-reveal)*-34).toFixed(2) + 'px)';
     }
     const g=buildGradient(paintTop, paintHClamped, active);
     paint.style.backgroundColor=g.bg;
