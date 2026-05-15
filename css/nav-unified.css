@@ -98,6 +98,14 @@ body:not(.about-page) .section.focus.note-tight .cs-container.w-container {
   margin-bottom: auto !important;
 }
 
+body:not(.about-page) .section.focus.note-tight .cs-container.w-container > :first-child {
+  margin-top: 0 !important;
+}
+
+body:not(.about-page) .section.focus.note-tight .cs-container.w-container > :last-child {
+  margin-bottom: 0 !important;
+}
+
 /* Alaska + Samsung case-study Overview sections: use navy backdrop */
 body:not(.about-page) .section.overview-dark {
   background-image: linear-gradient(#1c2432, #1c2432) !important;
