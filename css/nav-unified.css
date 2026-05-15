@@ -85,7 +85,15 @@ body:not(.about-page) .div-block-5 > p.overview.longpad {
 
 /* Loom case-study intro note sections: reduce excess bottom space */
 body:not(.about-page) .section.focus.note-tight {
+  min-height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  padding-top: 72px !important;
   padding-bottom: 72px !important;
+}
+
+body:not(.about-page) .section.focus.note-tight .cs-container.w-container {
+  width: 100%;
 }
 
 /* Alaska + Samsung case-study Overview sections: use navy backdrop */
