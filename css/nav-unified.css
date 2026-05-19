@@ -247,7 +247,7 @@ body:not(.about-page) .case-header .cs-container.w-container {
   padding-right: 0;
   display: flex;
   align-items: center;
-  padding-top: 72px;
+  padding-top: 48px;
 }
 
 #hero-layout .column-2 .heading.case-study.nonspacer {
@@ -371,7 +371,7 @@ body:not(.about-page) .case-header .cs-container.w-container {
 
   #hero-layout .image-5 {
     display: block;
-    margin: 18px auto 0 !important;
+    margin: 18px auto 52px !important;
     width: min(320px, 100%);
     max-width: 320px;
   }
@@ -379,6 +379,12 @@ body:not(.about-page) .case-header .cs-container.w-container {
   #hero-layout .paragraph,
   #hero-layout .heading.case-study.nonspacer {
     text-align: center;
+  }
+
+  #hero-layout .heading.case-study.nonspacer {
+    display: inline-block;
+    margin: 8px auto 22px !important;
+    padding: 12px 14px;
   }
 
   .footer-menu {
