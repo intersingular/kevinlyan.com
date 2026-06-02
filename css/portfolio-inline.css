@@ -161,7 +161,7 @@ img{display:block;border:0}
   justify-content:center;
 }
 .pc-card-text h2{margin:0;color:#fff;font-family:Lato,sans-serif;font-weight:700;font-size:22px;line-height:1.2}
-.pc-card-text p{margin:8px 0 0;color:rgba(255,255,255,0.7);font-family:Lato,sans-serif;font-weight:400;font-size:14px;line-height:1.4}
+.pc-card-text p{margin:8px 0 0;color:rgba(255,255,255,0.7);font-family:Lato,sans-serif;font-weight:400;font-size:16px;line-height:1.4}
 
 @media screen and (min-width:992px){
   .pc-landing{
@@ -203,7 +203,7 @@ img{display:block;border:0}
     padding:18px 24px;
   }
   .pc-card-text h2{font-size:24px}
-  .pc-card-text p{font-size:15px}
+  .pc-card-text p{font-size:17px}
 
 }
 
@@ -360,7 +360,7 @@ body.pc-intro-ready .pc-opportunity-badge{
   .pc-card-text{margin-top:2px;padding:14px 14px 10px 14px;border-radius:0 0 13px 13px}
   .pc-card-text{min-height:auto}
   .pc-card-text h2{font-size:20px;line-height:1.22}
-  .pc-card-text p{font-size:14px;line-height:1.36;margin-top:4px}
+  .pc-card-text p{font-size:16px;line-height:1.36;margin-top:4px}
 }
 
 /* ═══ MOBILE (≤600px) ═══ */
@@ -409,5 +409,5 @@ body.pc-intro-ready .pc-opportunity-badge{
   .pc-card-text{margin-top:2px;padding:14px 14px 10px 14px;border-radius:0 0 13px 13px}
   .pc-card-text{min-height:auto}
   .pc-card-text h2{font-size:20px;line-height:1.22}
-  .pc-card-text p{font-size:14px;line-height:1.36;margin-top:4px}
+  .pc-card-text p{font-size:16px;line-height:1.36;margin-top:4px}
 }

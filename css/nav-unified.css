@@ -39,6 +39,13 @@ body:not(.about-page) .section.case-header .cover.headtext {
 
 body:not(.about-page) .bodycopy.details-input {
   color: #FFD174 !important;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+body:not(.about-page):not(.side-projects-page) .case-header .div-block-3 > p.bodycopy {
+  font-size: 20px;
+  line-height: 1.5;
 }
 
 /* Case study content alignment to nav "work" left edge */
