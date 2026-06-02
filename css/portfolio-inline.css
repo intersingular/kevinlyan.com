@@ -81,7 +81,6 @@ img{display:block;border:0}
 
 /* ═══ CASE STUDY ROWS ═══ */
 .pc-row{
-  text-decoration:none;
   position:relative;
   overflow:visible;
   width:100%;
@@ -104,10 +103,18 @@ img{display:block;border:0}
 .pc-row:first-of-type{margin-top:0}
 .pc-row:last-of-type{padding-bottom:240px}
 
-/* Card container — right margin tracks the rail (50vw + 296px) with a 50px gap */
-.pc-card{
+.pc-card-hit{
+  display:block;
+  text-decoration:none;
+  color:inherit;
   margin-left:calc(var(--pc-home-side-pad) + var(--pc-brush-width) + var(--pc-card-brush-gap));
   margin-right:var(--pc-home-side-pad);
+}
+
+/* Card container — right margin tracks the rail (50vw + 296px) with a 50px gap */
+.pc-card{
+  margin-left:0;
+  margin-right:0;
   border-radius:16px;
   padding:4px;
   display:flex;flex-direction:column;
@@ -335,7 +342,8 @@ body.pc-intro-ready .pc-opportunity-badge{
   .pc-copy-mobile{display:inline}
   .pc-row{min-height:auto;overflow:hidden;padding:24px 0}
   .pc-row:last-of-type{padding-bottom:120px}
-  .pc-card{width:90%;margin-left:auto;margin-right:auto;padding:3px}
+  .pc-card-hit{width:90%;margin-left:auto;margin-right:auto}
+  .pc-card{width:100%;padding:3px}
   .pc-card-img{
     aspect-ratio:1010/690;
     display:grid;
@@ -381,7 +389,8 @@ body.pc-intro-ready .pc-opportunity-badge{
   .pc-hero-content p .pc-paint-line{font-size:inherit;line-height:inherit}
   .pc-copy-desktop{display:none}
   .pc-copy-mobile{display:inline}
-  .pc-card{width:90%;margin-left:auto;margin-right:auto;padding:3px}
+  .pc-card-hit{width:90%;margin-left:auto;margin-right:auto}
+  .pc-card{width:100%;padding:3px}
   .pc-card-img{
     aspect-ratio:1010/690;
     display:grid;
