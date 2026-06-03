@@ -37,6 +37,10 @@
   animation: spFadeIn 560ms ease-out 80ms forwards;
 }
 
+.sp-header-accent {
+  color: #f9de8e;
+}
+
 .sp-header p {
   margin: 0;
   color: rgba(255, 255, 255, 0.72);
