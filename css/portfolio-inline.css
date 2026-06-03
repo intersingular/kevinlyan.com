@@ -209,6 +209,10 @@ img{display:block;border:0}
 
 /* ── Card gradients ── */
 .pc-card-lace{background:linear-gradient(135deg,#6388D1 0%,#8E37D7 55%,#7C00A1 100%)}
+.pc-card-lace .pc-card-img img{transform:translateY(8px)}
+@media (hover:hover){
+  .pc-card-lace:hover .pc-card-img img{transform:translateY(2px)}
+}
 .pc-card-lait{background:linear-gradient(135deg,#CF917F 0%,#9A5F8E 38%,#6B4281 62%,#2E13B3 100%)}
 .pc-card-dc{background:linear-gradient(135deg,#E9F5C9 0%,#A8E4D3 48%,#35B4E5 100%)}
 .pc-card-rc{background:linear-gradient(135deg,#88E1F2 0%,#52A8E8 50%,#3B5998 100%)}
