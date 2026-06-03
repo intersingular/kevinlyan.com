@@ -27,7 +27,7 @@
 .sp-header h1 {
   margin: 0;
   padding-top: var(--page-content-top-pad, clamp(64px, calc(40px + 5vw), 112px));
-  color: #f9de8e;
+  color: #fff;
   font-family: Montserrat, sans-serif;
   font-weight: 600;
   font-size: 32px;
