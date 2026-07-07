@@ -255,4 +255,16 @@
   window.addEventListener('scroll',req,{passive:true});
   window.addEventListener('resize',req);
   req();
+
+  const heroScrollArrow=document.querySelector('.pc-hero-scroll-arrow');
+  const firstCaseStudy=document.getElementById('pc-row-1');
+  if(heroScrollArrow&&firstCaseStudy){
+    heroScrollArrow.addEventListener('click',()=>{
+      const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      firstCaseStudy.scrollIntoView({
+        behavior:prefersReducedMotion?'auto':'smooth',
+        block:'start',
+      });
+    });
+  }
 })();
