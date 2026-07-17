@@ -223,12 +223,10 @@
       const el=logoEls[s.logo];
       if(!el) continue;
       const sectionRect=s.el.getBoundingClientRect();
-      const segStartFull=sectionRect.top-paintTop;
-      const segEndFull=sectionRect.bottom-paintTop;
       const segCenterScreen=(sectionRect.top+sectionRect.bottom)/2;
       el.style.top=segCenterScreen+'px';
-      const strokeVisible=segEndFull>segStartFull && segStartFull<paintHClamped && paintBottomClamped>segStartFull;
-      el.style.opacity=(strokeVisible && segCenterScreen>LOGO_MIN_SCREEN_Y)?'1':'0';
+      const handlePassedLogo=handleTop>segCenterScreen;
+      el.style.opacity=(handlePassedLogo && segCenterScreen>LOGO_MIN_SCREEN_Y)?'1':'0';
     }
     for(const v of rowVisuals){
       const logoPageY=v.section.el.offsetTop+LOGO_PAGE_OFFSET;
