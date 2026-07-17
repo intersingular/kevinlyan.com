@@ -222,10 +222,16 @@
       if(!s.logo) continue;
       const el=logoEls[s.logo];
       if(!el) continue;
-      const logoPageY=s.el.offsetTop+LOGO_PAGE_OFFSET;
-      const logoScreenY=logoPageY-sy;
-      el.style.top=logoScreenY+'px';
-      el.style.opacity=(paintBottom>logoScreenY+LOGO_CLEARANCE && logoScreenY>LOGO_MIN_SCREEN_Y)?'1':'0';
+      const sectionRect=s.el.getBoundingClientRect();
+      const segStart=Math.max(0, sectionRect.top-paintTop);
+      const segEnd=Math.min(paintHClamped, sectionRect.bottom-paintTop);
+      if(segEnd<=segStart){
+        el.style.opacity='0';
+        continue;
+      }
+      const segCenterScreen=paintTop+(segStart+segEnd)/2;
+      el.style.top=segCenterScreen+'px';
+      el.style.opacity=(paintBottomClamped>segCenterScreen+LOGO_CLEARANCE/2 && segCenterScreen>LOGO_MIN_SCREEN_Y)?'1':'0';
     }
     for(const v of rowVisuals){
       const logoPageY=v.section.el.offsetTop+LOGO_PAGE_OFFSET;
