@@ -222,8 +222,9 @@
       if(!s.logo) continue;
       const el=logoEls[s.logo];
       if(!el) continue;
-      const sectionRect=s.el.getBoundingClientRect();
-      const segCenterScreen=(sectionRect.top+sectionRect.bottom)/2;
+      const anchor=s.el.querySelector('.pc-card')||s.el;
+      const anchorRect=anchor.getBoundingClientRect();
+      const segCenterScreen=(anchorRect.top+anchorRect.bottom)/2;
       el.style.top=segCenterScreen+'px';
       const handlePassedLogo=handleTop>segCenterScreen;
       el.style.opacity=(handlePassedLogo && segCenterScreen>LOGO_MIN_SCREEN_Y)?'1':'0';
