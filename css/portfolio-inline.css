@@ -120,6 +120,8 @@ img{display:block;border:0}
 }
 .pc-row:first-of-type{margin-top:0}
 .pc-row:last-of-type{padding-bottom:240px}
+html.pc-hide-disruptions #pc-row-3,
+html.pc-hide-disruptions #logo-alaska{display:none!important}
 
 .pc-card-hit{
   display:block;

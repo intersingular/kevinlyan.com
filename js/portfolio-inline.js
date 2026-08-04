@@ -45,6 +45,9 @@
   const ROW_BG_FROM={r:31,g:37,b:49};   // #1f2531
   const ROW_BG_TO={r:42,g:47,b:59};      // #2a2f3b
   const ROW_BG_RANGE=120;
+  const DISRUPTIONS_ROW_ID='pc-row-3';
+  const DISRUPTIONS_HIDDEN_UNTIL=Date.parse('2026-08-18T00:00:00-07:00');
+  const disruptionsHidden=Date.now()<DISRUPTIONS_HIDDEN_UNTIL;
 
   const states=[
     {id:'pc-hero',type:'hero',color:'#f9de8e',logo:null},
@@ -53,7 +56,12 @@
     {id:'pc-row-3',type:'row',color:'#1A9CE2',logo:'alaska'},
     {id:'pc-row-4',type:'row',color:'#1A9CE2',logo:'alaska2'},
     {id:'pc-row-5',type:'row',color:'#1a4080',logo:'samsung'},
-  ];
+  ].filter(s=>!(disruptionsHidden && s.id===DISRUPTIONS_ROW_ID));
+  if(disruptionsHidden){
+    const disruptionsRow=document.getElementById(DISRUPTIONS_ROW_ID);
+    if(disruptionsRow) disruptionsRow.hidden=true;
+    if(logoEls.alaska) logoEls.alaska.hidden=true;
+  }
   const secs=states.map(s=>({...s,el:document.getElementById(s.id)})).filter(s=>s.el);
   const rowVisuals=secs
     .filter(s=>s.type==='row')
