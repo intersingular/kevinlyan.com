@@ -25,6 +25,8 @@ body:has(.site-top-nav) > div:has(#navbar) {
   font-size: 18px;
   line-height: 1;
   font-weight: 400;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .site-top-nav a.is-active {
@@ -493,8 +495,9 @@ body:not(.about-page):not(.side-projects-page) .body.footer {
   .site-top-nav {
     justify-content: center;
     min-height: 64px;
-    padding: 16px 14px;
-    gap: 24px;
+    padding: 16px 12px;
+    gap: 18px;
+    flex-wrap: nowrap;
   }
 
   .site-top-nav a {

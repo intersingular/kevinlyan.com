@@ -21,7 +21,15 @@ img{display:block;border:0}
   gap:36px;
   z-index:5;
 }
-.pc-nav a{color:#fff;text-decoration:none;font-family:Lato,sans-serif;font-size:18px;line-height:1}
+.pc-nav a{
+  color:#fff;
+  text-decoration:none;
+  font-family:Lato,sans-serif;
+  font-size:18px;
+  line-height:1;
+  white-space:nowrap;
+  flex-shrink:0;
+}
 .pc-nav a.is-active{color:#48c8c8;font-weight:700}
 .pc-hero-content{
   padding-left:calc(var(--pc-home-side-pad) + var(--pc-brush-width) + var(--pc-brush-gap));
@@ -344,7 +352,7 @@ body.pc-intro-ready .pc-opportunity-badge{
   .pc-landing{--pc-rows-bg:#1f2531}
   .pc-scroll-rail{display:none}
   .pc-mini-rail{display:none !important}
-  .pc-nav{top:16px;left:50%;right:auto;transform:translateX(-50%);gap:24px;justify-content:center}
+  .pc-nav{top:16px;left:50%;right:auto;transform:translateX(-50%);gap:20px;justify-content:center;flex-wrap:nowrap}
   .pc-nav a{font-size:16px}
   .pc-hero{
     min-height:520px;
@@ -393,7 +401,7 @@ body.pc-intro-ready .pc-opportunity-badge{
   .pc-mini-paint{width:84px;border-radius:2px}
   .pc-mini-handle{width:84px}
   .pc-mini-skyline{width:84px}
-  .pc-nav{top:16px;gap:24px}
+  .pc-nav{top:16px;gap:18px;flex-wrap:nowrap;padding:0 12px;max-width:100%}
   .pc-nav a{font-size:16px}
   .pc-hero{
     min-height:520px;
