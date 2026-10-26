@@ -34,6 +34,11 @@ body:has(.site-top-nav) > div:has(#navbar) {
   font-weight: 700;
 }
 
+.pc-nav a[href*="linkedin.com"],
+.site-top-nav a[href*="linkedin.com"] {
+  display: none !important;
+}
+
 /* Match case-study header title gold to homepage headline gold */
 body:not(.about-page) .section.case-header .cover.headtext {
   color: #FFD174 !important;

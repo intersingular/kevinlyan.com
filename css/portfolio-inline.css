@@ -31,6 +31,7 @@ img{display:block;border:0}
   flex-shrink:0;
 }
 .pc-nav a.is-active{color:#48c8c8;font-weight:700}
+.pc-nav a[href*="linkedin.com"]{display:none!important}
 .pc-hero-content{
   padding-left:calc(var(--pc-home-side-pad) + var(--pc-brush-width) + var(--pc-brush-gap));
   padding-top:314px;
